@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const ROOM_ID = '<%= roomId %>'
+  </script>
+  <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js" defer></script>
+
+  <script src="/socket.io/socket.io.js" defer></script>
+  <script src="script.js" defer></script>
+  <style>
+    .videoSection {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px;
+    }
+
+    .videoStyle {
+      width: 600px;
+      height: 500px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+  <h3 id="showPeer"></h3>
+  <div class="videoSection">
+    <div class="videoStyle" id="ourVideo">Our Video</div>
+    <div class="videoStyle" id="remoteVideo">Remote Video</div>
+  </div>
+
+  <input placeholder="Peer ID" id="peerID">
+  <button id='callPeer'>Call Peer</button>
+</body>
+</html>
